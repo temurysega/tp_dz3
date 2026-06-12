@@ -5,7 +5,7 @@ import sys
 
 NUM_ROWS = 50
 
-COLUMNS = ["id", "category", "left","price"]
+COLUMNS = ["id", "price", "left","category"]
 
 def generate_row():
     return {
