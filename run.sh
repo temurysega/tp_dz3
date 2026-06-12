@@ -12,7 +12,12 @@ case "$COMMAND" in build_generator) docker build -t tp-generator "$PROJECT_DIR/g
     mkdir -p "$PROJECT_DIR/local_data"
     python3 "$PROJECT_DIR/generator/generate.py" "$PROJECT_DIR/local_data";;
 
+  build_reporter) docker build -t tp-reporter "$PROJECT_DIR/reporter" ;;
+  run_reporter) mkdir -p "$PROJECT_DIR/data"; docker run --rm -v "$PROJECT_DIR/data:/data" tp-reporter;;
+
   *)
     exit 1
     ;;
 esac
+
+
